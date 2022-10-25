@@ -133,8 +133,9 @@ elBtn1.addEventListener('click', ()=>{
         elSuccess3.textContent = 'Parolni xato kiritdingiz' + '✖️'
         elSuccess3.style.color = 'red'
     }   
-    if(elInp3.value == ''){
-        elSuccess4.textContent = ''
+    if(elInp4.value != elInp3.value){
+        elSuccess4.textContent = 'Parol bir xil emas' + '✖️'
+        elSuccess4.style.color = 'red'
     }else if(elInp4.value.length == ''){
         elSuccess4.textContent = 'Parolni qayta kiritmadingiz' + '✖️'
         elSuccess4.style.color = 'red' 
@@ -143,7 +144,10 @@ elBtn1.addEventListener('click', ()=>{
         elSuccess4.textContent = 'Parolingiz blan bir xil' + '✅'
         elSuccess4.style.color = 'green'
         
-    }else{
+    }else if(elInp3.value == ''){
+        elSuccess4.textContent = ''
+    }
+    else{
         elInp4.classList.add('kam')
         elInp4.classList.remove('yetarli')
     }
